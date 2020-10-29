@@ -1,10 +1,8 @@
 /**
- * 
- * Keens WeatherStation for NodeMCU
- * Display: SH1106
- * Sensor: BME280
+ * Keen's WeatherStation for NodeMCU
+ * Display: SH1106Sensor: BME280 
  * OpenWeatherMap API + http POST data to webserver
- */
+*/
 
 #include <ESPWiFi.h>
 #include <ESPHTTPClient.h>
@@ -12,9 +10,9 @@
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
 // time
-#include <time.h>                       // time() ctime()
-#include <sys/time.h>                   // struct timeval
-#include <coredecls.h>                  // settimeofday_cb()
+#include <time.h>      // time() ctime()
+#include <sys/time.h>  // struct timeval
+#include <coredecls.h> // settimeofday_cb()
 //#include "SSD1306Wire.h"
 #include "SH1106Wire.h"
 #include "OLEDDisplayUi.h"
@@ -23,7 +21,6 @@
 #include "OpenWeatherMapForecast.h"
 #include "WeatherStationFonts.h"
 #include "WeatherStationImages.h"
-
 
 // Create the Lightsensor instance
 #define BME_SCK 13
@@ -38,21 +35,19 @@ Adafruit_BME280 bme; // I2C
  **************************/
 
 // WIFI
-const char* WIFI_SSID = "XXXX";
-const char* WIFI_PWD = "XXXX";
+const char *WIFI_SSID = "XXXX";
+const char *WIFI_PWD = "XXXX";
 
 // HTTP
-const char* serverName = "XXXX";
+const char *serverName = "XXXX";
 String apiKeyValue = "XXXX";
 
-String humi1;
-String temp1;
-#define TZ               0      // (utc+) TZ in hours
-#define DST_MN          60      // use 60mn for summer time in some countries
+#define TZ 0      // (utc+) TZ in hours
+#define DST_MN 60 // use 60mn for summer time in some countries
 
 // Setup
 const int UPDATE_INTERVAL_SECS = 20 * 60; // Update every 20 minutes
-const int POST_DATA_INTERVAL = 30 * 60; // Send data every 30 min to server
+const int POST_DATA_INTERVAL = 10 * 60;   // Send data every 20 min to server
 
 unsigned long delayTime;
 // Display Settings
@@ -101,8 +96,8 @@ const String MONTH_NAMES[] = {"JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "
 // Initialize the oled display for address 0x3c
 // sda-pin=14 and sdc-pin=12
 //SSD1306Wire     display(I2C_DISPLAY_ADDRESS, SDA_PIN, SDC_PIN);
-SH1106Wire  display(I2C_DISPLAY_ADDRESS, SDA_PIN, SDC_PIN);
-OLEDDisplayUi   ui( &display );
+SH1106Wire display(I2C_DISPLAY_ADDRESS, SDA_PIN, SDC_PIN);
+OLEDDisplayUi ui(&display);
 
 OpenWeatherMapCurrentData currentWeather;
 OpenWeatherMapCurrent currentWeatherClient;
@@ -110,9 +105,9 @@ OpenWeatherMapCurrent currentWeatherClient;
 OpenWeatherMapForecastData forecasts[MAX_FORECASTS];
 OpenWeatherMapForecast forecastClient;
 
-#define TZ_MN           ((TZ)*60)
-#define TZ_SEC          ((TZ)*3600)
-#define DST_SEC         ((DST_MN)*60)
+#define TZ_MN ((TZ)*60)
+#define TZ_SEC ((TZ)*3600)
+#define DST_SEC ((DST_MN)*60)
 time_t now;
 
 // flag changed in the ticker function every 10 minutes
@@ -126,37 +121,34 @@ long timeSinceLastPOST = 0;
 //declaring prototypes
 void drawProgress(OLEDDisplay *display, int percentage, String label);
 void updateData(OLEDDisplay *display);
-void drawBME(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t x, int16_t y);
-void drawDateTime(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t x, int16_t y);
-void drawCurrentWeather(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t x, int16_t y);
-void drawForecast(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t x, int16_t y);
+void drawBME(OLEDDisplay *display, OLEDDisplayUiState *state, int16_t x, int16_t y);
+void drawDateTime(OLEDDisplay *display, OLEDDisplayUiState *state, int16_t x, int16_t y);
+void drawCurrentWeather(OLEDDisplay *display, OLEDDisplayUiState *state, int16_t x, int16_t y);
+void drawForecast(OLEDDisplay *display, OLEDDisplayUiState *state, int16_t x, int16_t y);
 void drawForecastDetails(OLEDDisplay *display, int x, int y, int dayIndex);
-void drawHeaderOverlay(OLEDDisplay *display, OLEDDisplayUiState* state);
+void drawHeaderOverlay(OLEDDisplay *display, OLEDDisplayUiState *state);
 void setReadyForWeatherUpdate();
-
+void makePOST();
 
 // Add frames
 // this array keeps function pointers to all frames
 // frames are the single views that slide from right to left
-FrameCallback frames[] = { drawDateTime, drawCurrentWeather, drawForecast, drawBME};
+FrameCallback frames[] = {drawDateTime, drawCurrentWeather, drawForecast, drawBME};
 int numberOfFrames = 4;
 
-OverlayCallback overlays[] = { drawHeaderOverlay };
+OverlayCallback overlays[] = {drawHeaderOverlay};
 int numberOfOverlays = 1;
 
-void setup() {
+void setup()
+{
   Serial.begin(115200);
   Serial.println();
-  Serial.println(F("BME280 test"));
+  Serial.println("BME280 test");
   bool status;
   status = bme.begin(0x76);
-  if (!status) {
+  if (!status)
+  {
     Serial.println("Could not find a valid BME280 sensor, check wiring!");
-    while (1);
-    Serial.println("-- Default Test --");
-    delayTime = 1000;
-
-    Serial.println();
   }
   // initialize dispaly
   display.init();
@@ -172,7 +164,8 @@ void setup() {
   WiFi.mode(WIFI_STA);
 
   int counter = 0;
-  while (WiFi.status() != WL_CONNECTED) {
+  while (WiFi.status() != WL_CONNECTED)
+  {
     delay(500);
     Serial.print(".");
     display.clear();
@@ -217,81 +210,93 @@ void setup() {
   Serial.println("");
 
   updateData(&display);
-
+  makePOST();
 }
 
-void loop() {
-  if (millis() - timeSinceLastWUpdate > (1000L * UPDATE_INTERVAL_SECS)) {
+void loop()
+{
+  if (millis() - timeSinceLastWUpdate > (1000L * UPDATE_INTERVAL_SECS))
+  {
     setReadyForWeatherUpdate();
     timeSinceLastWUpdate = millis();
   }
 
-  if (readyForWeatherUpdate && ui.getUiState()->frameState == FIXED) {
+  if (readyForWeatherUpdate && ui.getUiState()->frameState == FIXED)
+  {
     updateData(&display);
   }
 
-  if (millis() - timeSinceLastPOST > (1000L * POST_DATA_INTERVAL)) {
-    //Check WiFi connection status
-    if (WiFi.status() == WL_CONNECTED) {
-      HTTPClient http;
-
-      // Your Domain name with URL path or IP address with path
-      http.begin(serverName);
-
-      // Specify content-type header
-      http.addHeader("Content-Type", "application/x-www-form-urlencoded");
-
-      // Prepare your HTTP POST request data
-      String httpRequestData = "api_key=" + apiKeyValue + "&value1=" + String(bme.readTemperature())
-                               + "&value2=" + String(bme.readHumidity()) + "&value3=" + String(bme.readPressure() / 100.0F) + "";
-      Serial.print("httpRequestData: ");
-      Serial.println(httpRequestData);
-
-      // You can comment the httpRequestData variable above
-      // then, use the httpRequestData variable below (for testing purposes without the BME280 sensor)
-      //String httpRequestData = "api_key=tPmAT5Ab3j7F9&value1=24.75&value2=49.54&value3=1005.14";
-
-      // Send HTTP POST request
-      int httpResponseCode = http.POST(httpRequestData);
-
-      // If you need an HTTP request with a content type: text/plain
-      //http.addHeader("Content-Type", "text/plain");
-      //int httpResponseCode = http.POST("Hello, World!");
-
-      // If you need an HTTP request with a content type: application/json, use the following:
-      //http.addHeader("Content-Type", "application/json");
-      //int httpResponseCode = http.POST("{\"value1\":\"19\",\"value2\":\"67\",\"value3\":\"78\"}");
-
-      if (httpResponseCode > 0) {
-        Serial.print("HTTP Response code: ");
-        Serial.println(httpResponseCode);
-      }
-      else {
-        Serial.print("Error code: ");
-        Serial.println(httpResponseCode);
-      }
-      // Free resources
-      http.end();
-    }
-    else {
-      Serial.println("WiFi Disconnected");
-    }
+  if (millis() - timeSinceLastPOST > (1000L * POST_DATA_INTERVAL))
+  {
+    makePOST();
     timeSinceLastPOST = millis();
-
   }
 
   int remainingTimeBudget = ui.update();
 
-  if (remainingTimeBudget > 0) {
+  if (remainingTimeBudget > 0)
+  {
     // You can do some work here
     // Don't do stuff if you are below your
     // time budget.
     delay(remainingTimeBudget);
   }
-
 }
 
-void drawProgress(OLEDDisplay *display, int percentage, String label) {
+void makePOST()
+{
+  //Check WiFi connection status
+  if (WiFi.status() == WL_CONNECTED)
+  {
+    HTTPClient http;
+
+    // Your Domain name with URL path or IP address with path
+    http.begin(serverName);
+
+    // Specify content-type header
+    http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    // Prepare your HTTP POST request data
+    String httpRequestData = "api_key=" + apiKeyValue + "&value1=" + String(bme.readTemperature()) + "&value2=" + String(bme.readHumidity()) + "&value3=" + String(bme.readPressure() / 100.0F) + "";
+    Serial.print("httpRequestData: ");
+    Serial.println(httpRequestData);
+
+    // You can comment the httpRequestData variable above
+    // then, use the httpRequestData variable below (for testing purposes without the BME280 sensor)
+    //String httpRequestData = "api_key=tPmAT5Ab3j7F9&value1=24.75&value2=49.54&value3=1005.14";
+
+    // Send HTTP POST request
+    int httpResponseCode = http.POST(httpRequestData);
+
+    // If you need an HTTP request with a content type: text/plain
+    //http.addHeader("Content-Type", "text/plain");
+    //int httpResponseCode = http.POST("Hello, World!");
+
+    // If you need an HTTP request with a content type: application/json, use the following:
+    //http.addHeader("Content-Type", "application/json");
+    //int httpResponseCode = http.POST("{\"value1\":\"19\",\"value2\":\"67\",\"value3\":\"78\"}");
+
+    if (httpResponseCode > 0)
+    {
+      Serial.print("HTTP Response code: ");
+      Serial.println(httpResponseCode);
+    }
+    else
+    {
+      Serial.print("Error code: ");
+      Serial.println(httpResponseCode);
+    }
+    // Free resources
+    http.end();
+  }
+  else
+  {
+    Serial.println("WiFi Disconnected");
+  }
+}
+
+void drawProgress(OLEDDisplay *display, int percentage, String label)
+{
   display->clear();
   display->flipScreenVertically();
   display->setTextAlignment(TEXT_ALIGN_CENTER);
@@ -301,7 +306,8 @@ void drawProgress(OLEDDisplay *display, int percentage, String label) {
   display->display();
 }
 
-void updateData(OLEDDisplay *display) {
+void updateData(OLEDDisplay *display)
+{
   drawProgress(display, 10, "Updating time...");
   drawProgress(display, 30, "Updating weather...");
   currentWeatherClient.setMetric(IS_METRIC);
@@ -319,7 +325,8 @@ void updateData(OLEDDisplay *display) {
   delay(1000);
 }
 
-void drawBME(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t x, int16_t y) {
+void drawBME(OLEDDisplay *display, OLEDDisplayUiState *state, int16_t x, int16_t y)
+{
   float temp1 = bme.readTemperature();
   float pres1 = bme.readPressure() / 100.0F;
   float humi1 = bme.readHumidity();
@@ -338,9 +345,10 @@ void drawBME(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t x, int16_t
   display->drawString(64 + x, 30 + y, pres);
 }
 
-void drawDateTime(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t x, int16_t y) {
+void drawDateTime(OLEDDisplay *display, OLEDDisplayUiState *state, int16_t x, int16_t y)
+{
   now = time(nullptr);
-  struct tm* timeInfo;
+  struct tm *timeInfo;
   timeInfo = localtime(&now);
   char buff[16];
 
@@ -357,7 +365,8 @@ void drawDateTime(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t x, in
   display->setTextAlignment(TEXT_ALIGN_LEFT);
 }
 
-void drawCurrentWeather(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t x, int16_t y) {
+void drawCurrentWeather(OLEDDisplay *display, OLEDDisplayUiState *state, int16_t x, int16_t y)
+{
   display->setFont(ArialMT_Plain_10);
   display->setTextAlignment(TEXT_ALIGN_CENTER);
   display->drawString(64 + x, 38 + y, currentWeather.description);
@@ -372,16 +381,17 @@ void drawCurrentWeather(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t
   display->drawString(32 + x, 0 + y, currentWeather.iconMeteoCon);
 }
 
-
-void drawForecast(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t x, int16_t y) {
+void drawForecast(OLEDDisplay *display, OLEDDisplayUiState *state, int16_t x, int16_t y)
+{
   drawForecastDetails(display, x, y, 0);
   drawForecastDetails(display, x + 44, y, 1);
   drawForecastDetails(display, x + 88, y, 2);
 }
 
-void drawForecastDetails(OLEDDisplay *display, int x, int y, int dayIndex) {
+void drawForecastDetails(OLEDDisplay *display, int x, int y, int dayIndex)
+{
   time_t observationTimestamp = forecasts[dayIndex].observationTime;
-  struct tm* timeInfo;
+  struct tm *timeInfo;
   timeInfo = localtime(&observationTimestamp);
   display->setTextAlignment(TEXT_ALIGN_CENTER);
   display->setFont(ArialMT_Plain_10);
@@ -395,9 +405,10 @@ void drawForecastDetails(OLEDDisplay *display, int x, int y, int dayIndex) {
   display->setTextAlignment(TEXT_ALIGN_LEFT);
 }
 
-void drawHeaderOverlay(OLEDDisplay *display, OLEDDisplayUiState* state) {
+void drawHeaderOverlay(OLEDDisplay *display, OLEDDisplayUiState *state)
+{
   now = time(nullptr);
-  struct tm* timeInfo;
+  struct tm *timeInfo;
   timeInfo = localtime(&now);
   char buff[14];
   sprintf_P(buff, PSTR("%02d:%02d"), timeInfo->tm_hour, timeInfo->tm_min);
@@ -412,7 +423,8 @@ void drawHeaderOverlay(OLEDDisplay *display, OLEDDisplayUiState* state) {
   display->drawHorizontalLine(0, 52, 128);
 }
 
-void setReadyForWeatherUpdate() {
+void setReadyForWeatherUpdate()
+{
   Serial.println("Setting readyForUpdate to true");
   readyForWeatherUpdate = true;
 }
