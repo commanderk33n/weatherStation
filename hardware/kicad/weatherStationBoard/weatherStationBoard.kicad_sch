@@ -2904,10 +2904,6 @@
 		(uuid "af739dc2-b052-49e3-8563-6d2cceb221d9")
 	)
 	(no_connect
-		(at 43.18 34.29)
-		(uuid "ca610a92-7b84-4748-b53d-3949f526803e")
-	)
-	(no_connect
 		(at 175.26 45.72)
 		(uuid "ce2e1eb6-a5ba-43c3-9c03-792336b72720")
 	)
@@ -3205,6 +3201,16 @@
 	)
 	(wire
 		(pts
+			(xy 43.18 34.29) (xy 45.72 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "42d5f551-bf49-4f94-9a11-9ed9577f2acc")
+	)
+	(wire
+		(pts
 			(xy 63.5 57.15) (xy 66.04 57.15)
 		)
 		(stroke
@@ -3432,6 +3438,16 @@
 			(type default)
 		)
 		(uuid "922273ad-b20f-4635-a6fd-9c95b25c3840")
+	)
+	(wire
+		(pts
+			(xy 50.8 34.29) (xy 53.34 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9226c009-9205-4dad-8777-c1d57e63e6d6")
 	)
 	(wire
 		(pts
@@ -4152,6 +4168,73 @@
 			(project "weatherStationBoard"
 				(path "/8b822046-1d25-4aa8-8dbc-df598e1eff63"
 					(reference "#PWR07")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 48.26 34.29 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "07bc7ec4-fca8-4c94-89fd-2d84c77a06cb")
+		(property "Reference" "R6"
+			(at 55.626 34.544 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "5k1"
+			(at 48.26 36.83 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 48.26 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 48.26 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 48.26 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "dd5c3d0d-e0ef-4402-b7f9-a2cc4e34799c")
+		)
+		(pin "1"
+			(uuid "aeae612f-b9a7-4694-aed4-e71e327fcefa")
+		)
+		(instances
+			(project "weatherStationBoard"
+				(path "/8b822046-1d25-4aa8-8dbc-df598e1eff63"
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -5557,7 +5640,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
 			(at 73.66 102.235 0)
 			(effects
 				(font
@@ -6693,6 +6776,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 53.34 34.29 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c5f8c459-20d8-43a1-a6e6-4357705d142b")
+		(property "Reference" "#PWR020"
+			(at 53.34 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 53.34 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 53.34 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 53.34 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 53.34 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cd69a99a-51b7-48b1-8542-ab1e9b03c85b")
+		)
+		(instances
+			(project "weatherStationBoard"
+				(path "/8b822046-1d25-4aa8-8dbc-df598e1eff63"
+					(reference "#PWR020")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small")
 		(at 91.44 115.57 90)
 		(unit 1)
@@ -7245,7 +7394,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
 			(at 73.66 113.665 0)
 			(effects
 				(font
