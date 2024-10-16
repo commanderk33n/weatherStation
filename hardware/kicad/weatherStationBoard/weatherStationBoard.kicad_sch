@@ -3,7 +3,7 @@
 	(generator "eeschema")
 	(generator_version "8.0")
 	(uuid "8b822046-1d25-4aa8-8dbc-df598e1eff63")
-	(paper "A4")
+	(paper "A3")
 	(lib_symbols
 		(symbol "Connector:USB_C_Plug_USB2.0"
 			(pin_names
@@ -2370,6 +2370,151 @@
 				)
 			)
 		)
+		(symbol "Switch:SW_Push"
+			(pin_numbers hide)
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW"
+				(at 1.27 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "SW_Push"
+				(at 0 -1.524 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Push button switch, generic, two pins"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "switch normally-open pushbutton push-button"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SW_Push_0_1"
+				(circle
+					(center -2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 0 3.048)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.27) (xy -2.54 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Transistor_BJT:S8050"
 			(pin_names
 				(offset 0) hide)
@@ -2794,6 +2939,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a89df4cf-6864-4615-8977-4effcf87a450")
+	)
+	(junction
+		(at 134.62 109.22)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b22c6aab-e270-49ef-8259-b972ff3a46b1")
 	)
 	(junction
 		(at 252.73 24.13)
@@ -3231,6 +3382,16 @@
 	)
 	(wire
 		(pts
+			(xy 134.62 106.68) (xy 134.62 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4d6a1849-4eb6-4edb-8746-068d1dd92f8c")
+	)
+	(wire
+		(pts
 			(xy 63.5 29.21) (xy 68.58 29.21)
 		)
 		(stroke
@@ -3338,6 +3499,26 @@
 			(type default)
 		)
 		(uuid "66b2bbb6-5ed2-488e-b346-a45f049b7c1b")
+	)
+	(wire
+		(pts
+			(xy 134.62 109.22) (xy 140.97 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "673c940f-7aab-4b80-bb5f-3a627a382cd7")
+	)
+	(wire
+		(pts
+			(xy 134.62 97.79) (xy 134.62 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6e3722d2-4ec0-40bf-ad35-b7af93949c19")
 	)
 	(wire
 		(pts
@@ -3611,6 +3792,16 @@
 	)
 	(wire
 		(pts
+			(xy 134.62 109.22) (xy 134.62 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df0c3ef8-3509-4035-acab-d79b5c815570")
+	)
+	(wire
+		(pts
 			(xy 45.72 68.58) (xy 45.72 63.5)
 		)
 		(stroke
@@ -3714,6 +3905,18 @@
 		(uuid 713a1dae-7698-43a5-b7b5-d28795eec813)
 	)
 	(rectangle
+		(start 120.65 83.82)
+		(end 172.72 134.62)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 80cd4138-384c-4eaa-b3b3-406c0f0ca68e)
+	)
+	(rectangle
 		(start 59.69 83.82)
 		(end 118.11 134.62)
 		(stroke
@@ -3748,6 +3951,16 @@
 			(type none)
 		)
 		(uuid df2ea5fa-f265-4625-91a3-fc8a312b33d2)
+	)
+	(text "RESET\n"
+		(exclude_from_sim no)
+		(at 132.588 88.392 0)
+		(effects
+			(font
+				(size 5.08 5.08)
+			)
+		)
+		(uuid "61f32bf0-d11f-4a19-893d-67717a34399a")
 	)
 	(text "ESP8266"
 		(exclude_from_sim no)
@@ -3853,6 +4066,17 @@
 			(justify right bottom)
 		)
 		(uuid "28d173af-7ed2-4b8f-bc8d-26aa0fd30830")
+	)
+	(label "nRST"
+		(at 140.97 109.22 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "302d60ff-e35c-4653-9785-9c5584acd271")
 	)
 	(label "ESP TX"
 		(at 184.15 35.56 0)
@@ -3974,6 +4198,28 @@
 			(justify left bottom)
 		)
 		(uuid "f8bf3c5d-ddc8-4bc5-89e0-4f2db7c56dbb")
+	)
+	(global_label "3V3"
+		(shape input)
+		(at 134.62 97.79 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "126f8427-3be6-4315-941b-569649dfcc89")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 134.62 91.2972 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 	)
 	(global_label "3V3"
 		(shape input)
@@ -4870,6 +5116,76 @@
 			(project ""
 				(path "/8b822046-1d25-4aa8-8dbc-df598e1eff63"
 					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 134.62 118.11 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "46c5af23-e281-4a74-b0d8-44cad50e6127")
+		(property "Reference" "SW1"
+			(at 138.43 116.8399 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SW_Push"
+			(at 138.43 119.3799 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 139.7 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 139.7 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 134.62 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ffc4a4ca-b9f4-4e4d-842f-25222a3702ad")
+		)
+		(pin "2"
+			(uuid "3c35b985-4341-4159-a926-687ddd792270")
+		)
+		(instances
+			(project ""
+				(path "/8b822046-1d25-4aa8-8dbc-df598e1eff63"
+					(reference "SW1")
 					(unit 1)
 				)
 			)
@@ -6770,6 +7086,73 @@
 			(project "weatherStationBoard"
 				(path "/8b822046-1d25-4aa8-8dbc-df598e1eff63"
 					(reference "C8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 134.62 104.14 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c5d877aa-3c3a-44da-9fbf-db15c5d61fc1")
+		(property "Reference" "R7"
+			(at 130.81 103.378 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 130.81 105.918 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 134.62 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 134.62 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 134.62 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f5b119da-758b-4256-a140-9a336d4b2efd")
+		)
+		(pin "2"
+			(uuid "1bc5c653-3c22-4da6-af58-4e9fe7207fa3")
+		)
+		(instances
+			(project "weatherStationBoard"
+				(path "/8b822046-1d25-4aa8-8dbc-df598e1eff63"
+					(reference "R7")
 					(unit 1)
 				)
 			)
