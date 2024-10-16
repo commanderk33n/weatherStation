@@ -1755,6 +1755,229 @@
 				)
 			)
 		)
+		(symbol "PTS645SM43SMTR92LFS:PTS645SM43SMTR92LFS"
+			(pin_names
+				(offset 0.762)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "S"
+				(at 16.51 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "PTS645SM43SMTR92LFS"
+				(at 16.51 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "PTS645(SMT)"
+				(at 16.51 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.ckswitches.com/media/1471/pts645.pdf"
+				(at 16.51 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "C & K COMPONENTS - PTS645SM43SMTR92LFS - SWITCH, SPST, 0.05A, 12VDC, SMD, 4.3MM"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description_1" "C & K COMPONENTS - PTS645SM43SMTR92LFS - SWITCH, SPST, 0.05A, 12VDC, SMD, 4.3MM"
+				(at 16.51 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Height" ""
+				(at 16.51 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "C & K COMPONENTS"
+				(at 16.51 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "PTS645SM43SMTR92LFS"
+				(at 16.51 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Part Number" "611-PTS645SM43SMTR92"
+				(at 16.51 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/CK/PTS645SM43SMTR92LFS?qs=FESYatJ8odKPktxv6ncfWg%3D%3D"
+				(at 16.51 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Arrow Part Number" "PTS645SM43SMTR92LFS"
+				(at 16.51 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/pts645sm43smtr92lfs/ck"
+				(at 16.51 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(symbol "PTS645SM43SMTR92LFS_0_0"
+				(pin passive line
+					(at 0 0 0)
+					(length 5.08)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 20.32 0 180)
+					(length 5.08)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 0)
+					(length 5.08)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 20.32 -2.54 180)
+					(length 5.08)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PTS645SM43SMTR92LFS_0_1"
+				(polyline
+					(pts
+						(xy 5.08 2.54) (xy 15.24 2.54) (xy 15.24 -5.08) (xy 5.08 -5.08) (xy 5.08 2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+		)
 		(symbol "RF_Module:ESP-12F"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -2987,8 +3210,20 @@
 		(uuid "0513405f-5a1f-497e-aec0-58f33362a25c")
 	)
 	(no_connect
+		(at 134.62 123.19)
+		(uuid "08b6de26-535d-40f9-86ab-af7c936cc12d")
+	)
+	(no_connect
+		(at 148.59 121.92)
+		(uuid "1134a8c8-072a-425b-9450-fd33d2e057e1")
+	)
+	(no_connect
 		(at 86.36 49.53)
 		(uuid "153b0e03-f450-4481-8590-051306cb16bc")
+	)
+	(no_connect
+		(at 148.59 124.46)
+		(uuid "2b2d3955-20dd-42bf-b113-19be005e4db9")
 	)
 	(no_connect
 		(at 144.78 48.26)
@@ -3051,6 +3286,10 @@
 		(uuid "8ad4eec8-29f5-417c-bf59-42532d335cc8")
 	)
 	(no_connect
+		(at 168.91 121.92)
+		(uuid "977144f6-ed85-42fb-8fb2-dde56646bac1")
+	)
+	(no_connect
 		(at 144.78 38.1)
 		(uuid "af739dc2-b052-49e3-8563-6d2cceb221d9")
 	)
@@ -3065,6 +3304,10 @@
 	(no_connect
 		(at 144.78 53.34)
 		(uuid "f1d3f168-b275-4c1b-9683-79399600418f")
+	)
+	(no_connect
+		(at 168.91 124.46)
+		(uuid "f2838459-28d8-4891-9188-c711dfd69409")
 	)
 	(no_connect
 		(at 175.26 58.42)
@@ -4689,6 +4932,162 @@
 		)
 	)
 	(symbol
+		(lib_id "PTS645SM43SMTR92LFS:PTS645SM43SMTR92LFS")
+		(at 148.59 121.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1d18a93c-9117-454b-a6e2-8c9b9b65d690")
+		(property "Reference" "S1"
+			(at 158.75 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PTS645SM43SMTR92LFS"
+			(at 158.75 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PTS645SM43SMTR92LFS:PTS645_SMT_"
+			(at 165.1 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.ckswitches.com/media/1471/pts645.pdf"
+			(at 165.1 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "C & K COMPONENTS - PTS645SM43SMTR92LFS - SWITCH, SPST, 0.05A, 12VDC, SMD, 4.3MM"
+			(at 148.59 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "C & K COMPONENTS - PTS645SM43SMTR92LFS - SWITCH, SPST, 0.05A, 12VDC, SMD, 4.3MM"
+			(at 165.1 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 165.1 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "C & K COMPONENTS"
+			(at 165.1 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "PTS645SM43SMTR92LFS"
+			(at 165.1 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "611-PTS645SM43SMTR92"
+			(at 165.1 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/CK/PTS645SM43SMTR92LFS?qs=FESYatJ8odKPktxv6ncfWg%3D%3D"
+			(at 165.1 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" "PTS645SM43SMTR92LFS"
+			(at 165.1 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/pts645sm43smtr92lfs/ck"
+			(at 165.1 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3a213fe9-a559-4351-ae34-afc4824ccfad")
+		)
+		(pin "2"
+			(uuid "e5155d79-9b8c-4a39-9b2a-6f0be9da128f")
+		)
+		(pin "4"
+			(uuid "37801212-9a7e-44a3-8804-59e6379a9567")
+		)
+		(pin "3"
+			(uuid "c3ef8f64-8d57-4532-933a-5da51e32b69c")
+		)
+		(instances
+			(project ""
+				(path "/8b822046-1d25-4aa8-8dbc-df598e1eff63"
+					(reference "S1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 20.32 67.31 0)
 		(unit 1)
@@ -4978,7 +5377,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_USB:USB_C_Receptacle_GCT_USB4085"
+		(property "Footprint" "Connector_USB:USB_C_Receptacle_XKB_U262-16XN-4BVC11"
 			(at 31.75 44.45 0)
 			(effects
 				(font
