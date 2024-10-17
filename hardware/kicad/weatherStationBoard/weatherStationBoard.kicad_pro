@@ -59,9 +59,11 @@
         }
       ],
       "drc_exclusions": [
-        "lib_footprint_mismatch|172975000|105150000|0e8e9b44-91d7-423d-ad7c-b80296e22d75|00000000-0000-0000-0000-000000000000",
-        "lib_footprint_mismatch|173000000|79600000|f8f9333b-2ac5-4fbb-bf32-bc9242030a17|00000000-0000-0000-0000-000000000000",
-        "lib_footprint_mismatch|178897500|92500000|84242142-f9d4-41bf-953d-0edf3c6bcc0b|00000000-0000-0000-0000-000000000000"
+        "lib_footprint_mismatch|198750000|100750000|f8f9333b-2ac5-4fbb-bf32-bc9242030a17|00000000-0000-0000-0000-000000000000",
+        "lib_footprint_mismatch|204000000|117497500|84242142-f9d4-41bf-953d-0edf3c6bcc0b|00000000-0000-0000-0000-000000000000",
+        "lib_footprint_mismatch|209000000|100750000|0e8e9b44-91d7-423d-ad7c-b80296e22d75|00000000-0000-0000-0000-000000000000",
+        "silk_edge_clearance|146000000|108805000|dde27c16-8d29-4569-8958-a7177013bde6|fb81a2af-965b-42af-bf8d-fba2fe43ab97",
+        "silk_edge_clearance|146000000|118205000|dde27c16-8d29-4569-8958-a7177013bde6|3cccd7b4-297c-45b2-8dd9-bcba0d088146"
       ],
       "meta": {
         "version": 2
@@ -505,7 +507,7 @@
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "weatherStationBoard.step",
       "svg": "",
       "vrml": ""
     },
