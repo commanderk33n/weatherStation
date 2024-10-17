@@ -5760,6 +5760,16 @@
 	)
 	(wire
 		(pts
+			(xy 73.66 21.59) (xy 73.66 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b10b6d1-29b7-48a4-92c9-48700aa75e31")
+	)
+	(wire
+		(pts
 			(xy 86.36 54.61) (xy 91.44 54.61)
 		)
 		(stroke
@@ -7270,16 +7280,6 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 24.13) (xy 81.28 24.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c436c308-738a-4292-acb2-d05c4175b471")
-	)
-	(wire
-		(pts
 			(xy 93.98 36.83) (xy 97.79 36.83)
 		)
 		(stroke
@@ -7520,7 +7520,7 @@
 	)
 	(wire
 		(pts
-			(xy 242.57 147.32) (xy 252.73 147.32)
+			(xy 242.57 147.32) (xy 254 147.32)
 		)
 		(stroke
 			(width 0)
@@ -7828,9 +7828,9 @@
 		)
 		(uuid "a24f021d-6bfd-4169-ab52-aef31d92a152")
 	)
-	(text "5V 2 3V"
+	(text "AMS1117 5V TO 3V3"
 		(exclude_from_sim no)
-		(at 232.156 16.002 0)
+		(at 243.84 16.002 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -8675,7 +8675,7 @@
 	)
 	(global_label "5V"
 		(shape input)
-		(at 81.28 24.13 0)
+		(at 73.66 21.59 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8685,7 +8685,7 @@
 		)
 		(uuid "a6c5fcf8-b10b-4c62-9dcb-32163c29ce7c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 86.5633 24.13 0)
+			(at 73.66 16.3067 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11347,7 +11347,7 @@
 		(dnp no)
 		(uuid "4b87dbc6-5893-4051-bdb7-8929f1b0bfb0")
 		(property "Reference" "C1"
-			(at 71.12 25.4062 0)
+			(at 67.31 22.352 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11356,7 +11356,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 71.12 27.9462 0)
+			(at 65.532 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
