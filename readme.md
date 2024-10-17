@@ -1,5 +1,5 @@
 # Weather Station NodeMCU
-
+![WeatherStationBoardV1.0](/assets/weatherstationboard.png "WeatherStationBoardV1.0")
 #### Usage:
 
 after checkout:
